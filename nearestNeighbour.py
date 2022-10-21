@@ -18,7 +18,7 @@ def getDistance(v1,v2):
     dy = int(v2[1]) - int(v1[1])
     return math.sqrt((math.pow(dx,2)+math.pow(dy,2)))
 
-def nearestN(l):
+def nearestN(l,r):
     #wybierz losowy wierzcholek jako aktualny i odwiedzony
     #znajdz najblizszy wierzcholek
     #dodaj do rozwiazania krawedz laczaca aktualny i znaleziony wierzcholek
@@ -30,8 +30,10 @@ def nearestN(l):
     visited = []
     best_dist = 0
 
-    #current = l[random.randint(0,len(l))-1]
-    current = l[0]
+    if r:
+        current = l[random.randint(0,len(l))-1]
+    else:
+        current = l[0]
 
     solution.append(current)
     visited.append(current)
