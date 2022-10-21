@@ -30,7 +30,8 @@ def nearestN(l):
     visited = []
     best_dist = 0
 
-    current = l[random.randint(0,len(l))-1]
+    #current = l[random.randint(0,len(l))-1]
+    current = l[0]
 
     solution.append(current)
     visited.append(current)
@@ -52,7 +53,9 @@ def nearestN(l):
         current = closest
         best_dist +=closest_dist
 
+    best_dist += getDistance(solution[0], solution[len(solution)-1])
     solution.append(solution[0])
+
     print("solution: {}".format(solution))
     print("distance: {}".format(best_dist))
 
